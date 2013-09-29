@@ -1,4 +1,7 @@
 /build
 /bin
 /.git
+
 *.class
+*.war
+WEB-INF/lib
