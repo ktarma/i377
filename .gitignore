@@ -4,4 +4,6 @@
 
 *.class
 *.war
-WEB-INF/lib
+*.jar
+
+!/lib/*.jar
