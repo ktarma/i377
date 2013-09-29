@@ -6,7 +6,7 @@
 	<property name="dir.lib" value="WebContent/WEB-INF/lib" />
 	<property name="ivy.retrieve.pattern" value="${dir.lib}/[artifact]-[type]-[revision].[ext]" />
 	<property name="webContent.dir" location="WebContent" />
-	<property name="war.file" location="ktarma.war" />
+	<property name="war.file" location="project1.war" />
 
 	<path id="classpath">
 		<fileset dir="lib">
