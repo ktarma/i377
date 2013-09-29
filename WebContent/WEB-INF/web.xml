@@ -10,13 +10,13 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <listener>
-    <listener-class>test.SessionCounterListener</listener-class>
+    <listener-class>SessionCounterListener</listener-class>
   </listener>
   <servlet>
     <description></description>
     <display-name>Hello</display-name>
     <servlet-name>Hello</servlet-name>
-    <servlet-class>test.Hello</servlet-class>
+    <servlet-class>Hello</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Hello</servlet-name>
@@ -26,7 +26,7 @@
     <description></description>
     <display-name>HomePage</display-name>
     <servlet-name>HomePage</servlet-name>
-    <servlet-class>test.HomePage</servlet-class>
+    <servlet-class>HomePage</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>HomePage</servlet-name>
@@ -36,7 +36,7 @@
     <description></description>
     <display-name>SessionCount</display-name>
     <servlet-name>SessionCount</servlet-name>
-    <servlet-class>test.SessionCount</servlet-class>
+    <servlet-class>SessionCount</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SessionCount</servlet-name>
@@ -46,7 +46,7 @@
     <description></description>
     <display-name>LogOut</display-name>
     <servlet-name>LogOut</servlet-name>
-    <servlet-class>test.LogOut</servlet-class>
+    <servlet-class>LogOut</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LogOut</servlet-name>
