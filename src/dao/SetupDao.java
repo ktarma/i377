@@ -1,34 +1,50 @@
 package dao;
 
 import java.io.File;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.taskdefs.SQLExec;
 
 public class SetupDao extends AbstractDao {
 
 	public void createSchema() {
-		System.out.println("tableExists:" + tableExists());
-		if (!tableExists()){
+		
+		if (!tableExists()) {
+			System.out.println("table does not exist");
 			executeSqlFromFile(getClassPathFile("schema.sql"));
 			insertDefaultData();
+		}else{
+			System.out.println("table exists");
 		}
 	}
 
 	private boolean tableExists() {
 		try {
+			String tableName = "unit";
+			DatabaseMetaData metaData = getConnection().getMetaData();
+			ResultSet res = metaData.getTables(null, null, tableName.toUpperCase(), null);
+			return res.next();
+		} catch (SQLException e) {
+			// e.printStackTrace();
+		}
+		return false;
+	}
+	
+	private boolean tableExists0() {
+		// TODO! there must be a better way!!
+		try {
 			st = getConnection().createStatement();
 			rs = st.executeQuery("SELECT * FROM unit");
-			while (rs.next()) {
-				return true;
-			}
 		} catch (SQLException e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			return false;
 		} finally {
 			closeResources();
 		}
-		return false;
+		return true;
 	}
 
 	public void insertDefaultData() {
