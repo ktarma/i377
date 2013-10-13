@@ -1,11 +1,3 @@
-/*
- * 1. kuvab kõik ühikud
- * 2. ühikuid on võimalik filtreerida /Search?searchString=c
- * (like %string% (toupper))
- * 3. ühikuid on võimalik kustutada
- * 4. lisades siia tulla redirectiga
- */
-
 package servlet;
 
 import java.io.IOException;

@@ -1,9 +1,3 @@
-/*
- * 1. do=clear_data
- * 2. do=insert_data (listeneriga paigaldamisel!)
- * 3. -> Search
- */
-
 package servlet;
 
 import java.io.IOException;
