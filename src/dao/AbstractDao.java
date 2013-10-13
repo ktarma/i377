@@ -6,7 +6,7 @@ import org.apache.commons.dbutils.DbUtils;
 
 public abstract class AbstractDao {
 
-	public static final String DB_URL = "jdbc:hsqldb:file:${user.home}/i377/ktarma/db;shutdown=true;";
+	public static final String DB_URL = "jdbc:hsqldb:file:${user.home}/data/ktarma/db;shutdown=true;";
 
 	private Connection connection;
 	protected PreparedStatement pst;

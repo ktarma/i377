@@ -9,8 +9,10 @@ public class SetupDao extends AbstractDao {
 
 	public void createSchema() {
 		System.out.println("tableExists:" + tableExists());
-		if (!tableExists())
+		if (!tableExists()){
 			executeSqlFromFile(getClassPathFile("schema.sql"));
+			insertDefaultData();
+		}
 	}
 
 	private boolean tableExists() {

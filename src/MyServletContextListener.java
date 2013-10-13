@@ -16,7 +16,6 @@ public class MyServletContextListener implements ServletContextListener {
 		try {
 			SetupDao setupDao = new SetupDao();
 			setupDao.createSchema();
-			setupDao.insertDefaultData();
 		} finally {
 
 		}
