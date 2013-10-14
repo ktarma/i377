@@ -22,7 +22,7 @@ public class MyServletContextListener implements ServletContextListener {
 	}
 
 	public void contextDestroyed(ServletContextEvent contextEvent) {
-		context = contextEvent.getServletContext();
+		// context = contextEvent.getServletContext();
 		System.out.println("Context Destroyed");
 	}
 }
