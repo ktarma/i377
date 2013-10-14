@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 <!--
-@import url("/project1/static/style.css");
+@import url("<c:url value='/static/style.css'/>");
 -->
 </style>
 </head>
