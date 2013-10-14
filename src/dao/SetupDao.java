@@ -2,7 +2,6 @@ package dao;
 
 import java.io.File;
 import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.apache.tools.ant.Project;
@@ -11,12 +10,12 @@ import org.apache.tools.ant.taskdefs.SQLExec;
 public class SetupDao extends AbstractDao {
 
 	public void createSchema() {
-		
+
 		if (!tableExists()) {
 			System.out.println("table does not exist");
 			executeSqlFromFile(getClassPathFile("schema.sql"));
 			insertDefaultData();
-		}else{
+		} else {
 			System.out.println("table exists");
 		}
 	}
@@ -25,27 +24,29 @@ public class SetupDao extends AbstractDao {
 		try {
 			String tableName = "unit";
 			DatabaseMetaData metaData = getConnection().getMetaData();
-			ResultSet res = metaData.getTables(null, null, tableName.toUpperCase(), null);
-			return res.next();
+			rs = metaData.getTables(null, null, tableName.toUpperCase(), null);
+			return rs.next();
 		} catch (SQLException e) {
 			// e.printStackTrace();
-		}
-		return false;
-	}
-	
-	private boolean tableExists0() {
-		// TODO! there must be a better way!!
-		try {
-			st = getConnection().createStatement();
-			rs = st.executeQuery("SELECT * FROM unit");
-		} catch (SQLException e) {
-			// e.printStackTrace();
-			return false;
 		} finally {
 			closeResources();
 		}
-		return true;
+		return false;
 	}
+
+	// private boolean tableExists0() {
+	// // TODO! there must be a better way!!
+	// try {
+	// st = getConnection().createStatement();
+	// rs = st.executeQuery("SELECT * FROM unit");
+	// } catch (SQLException e) {
+	// // e.printStackTrace();
+	// return false;
+	// } finally {
+	// closeResources();
+	// }
+	// return true;
+	// }
 
 	public void insertDefaultData() {
 		executeSqlFromFile(getClassPathFile("defaultdata.sql"));

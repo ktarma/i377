@@ -13,12 +13,8 @@ public class MyServletContextListener implements ServletContextListener {
 		// set variable to servlet context
 		// context.setAttribute("TEST", "TEST_VALUE");
 
-		try {
-			SetupDao setupDao = new SetupDao();
-			setupDao.createSchema();
-		} finally {
-
-		}
+		SetupDao setupDao = new SetupDao();
+		setupDao.createSchema();
 	}
 
 	public void contextDestroyed(ServletContextEvent contextEvent) {
